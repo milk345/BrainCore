@@ -22,6 +22,7 @@ def make_layer(inputs, in_size, out_size, activate=None):
 
 
 class BPNeuralNetwork:
+    brainCan = "/milk_workplace/brainCan/";
     def __init__(self):
         self.session = tf.Session()
         self.loss = None
@@ -99,16 +100,16 @@ class BPNeuralNetwork:
 
     def save_with_id(self,id):
 
-        if not os.path.exists("G:/workplace/brainCan/"+str(id)+"milk"):
-          os.makedirs("G:/workplace/brainCan/"+str(id)+"milk")
+        if not os.path.exists(self.brainCan+str(id)+"milk"):
+          os.makedirs(self.brainCan+str(id)+"milk")
         saver = tf.train.Saver()
-        saver_path = saver.save(self.session, "G:/workplace/brainCan/"+str(id)+"milk/brain.ckpt")
+        saver_path = saver.save(self.session, self.brainCan+str(id)+"milk/brain.ckpt")
         print(saver_path)
 
     def restore_with_id(self,id):
         with tf.Session() as sess:
          saver = tf.train.Saver()
-         saver.restore(self.session, "G:/workplace/brainCan/"+str(id)+"milk/brain.ckpt")
+         saver.restore(self.session, self.brainCan+str(id)+"milk/brain.ckpt")
 
     # def test(self):
     #     test_data = np.array([[0, 1]])
