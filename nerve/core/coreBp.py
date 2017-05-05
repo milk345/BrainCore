@@ -22,7 +22,7 @@ def make_layer(inputs, in_size, out_size, activate=None):
 
 
 class BPNeuralNetwork:
-    brainCan = "./brainCan/";
+    brainCan = "/milk_workplace/brainCan/";
     def __init__(self):
         self.session = tf.Session()
         self.loss = None
