@@ -101,8 +101,8 @@ class BPNeuralNetwork:
     def save_with_id(self,id):
 
         if not os.path.exists(self.brainCan+str(id)+"milk"):
-          os.system("sudo mkdir -p "+self.brainCan+str(id)+"milk");
-          # os.makedirs(self.brainCan+str(id)+"milk")
+          # os.system("sudo mkdir -p "+self.brainCan+str(id)+"milk");
+          os.makedirs(self.brainCan+str(id)+"milk")
         saver = tf.train.Saver()
         saver_path = saver.save(self.session, self.brainCan+str(id)+"milk/brain.ckpt")
         print(saver_path)
