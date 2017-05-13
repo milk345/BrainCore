@@ -128,7 +128,7 @@ class God:
             return "ok"
 
 
-         def praticeByGod(self,pratice_data_address,label_data_address,shape,input_number,output_number,brain_id):
+         def praticeByGod(self,pratice_data_address,label_data_address,shape,input_number,output_number,brain_id,limit):
 
 
             brain=BPNeuralNetwork()
@@ -140,7 +140,7 @@ class God:
 
             if not(x_data[0].size==input_number)or not(y_data[0].size==output_number):
                 return"wrong_format"
-            brain.train(x_data,y_data)
+            brain.train(x_data,y_data,limit)
             return "ok"
 
          def predictByGod(self, input_array,shape, input_number,output_number,brain_id):

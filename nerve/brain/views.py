@@ -78,10 +78,10 @@ def pratice(request):
     input_number=req_json.get("input_number")
     output_number=req_json.get("output_number")
     brain_id=req_json.get("brain_id")
+    limit=req_json.get("limit")
 
 
-
-    result=god.praticeByGod(pratice_data_address, label_data_address, shape_array, input_number, output_number, brain_id)
+    result=god.praticeByGod(pratice_data_address, label_data_address, shape_array, input_number, output_number, brain_id,limit)
 
 
 
