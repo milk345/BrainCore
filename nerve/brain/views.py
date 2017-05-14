@@ -18,14 +18,14 @@ def index(request):
 
 def turn_string_into_array(str):
     list = str.split(",")
-    array = np.arange(len(list))
+    array = np.arange(0, len(list), 1, np.float32)
     for i in range(0,len(list)):
         array[i]=list[i]
     return array
 
 def turn_string_into_2axis_array(str):
     list = str.split(",")
-    array = np.arange(len(list))
+    array = np.arange(0,len(list),1,np.float32)
     for i in range(0,len(list)):
         array[i]=list[i]
 
