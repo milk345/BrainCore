@@ -16,6 +16,15 @@ def index(request):
 def index(request):
     return render(request,'index.html');
 
+def turn_string_into_array_for_shape(str):
+    list = str.split(",")
+    array = np.arange(len(list))
+    for i in range(0,len(list)):
+        array[i]=list[i]
+    return array
+
+
+
 def turn_string_into_array(str):
     list = str.split(",")
     array = np.arange(0, len(list), 1, np.float32)
@@ -47,7 +56,7 @@ def test(request):
 def create(request):
     req_json=recv_data(request)
     shape=req_json.get("shape")
-    shape_array=turn_string_into_array(shape)
+    shape_array=turn_string_into_array_for_shape(shape)
 
     input_number=req_json.get("input_number")
     output_number=req_json.get("output_number")
@@ -73,7 +82,7 @@ def pratice(request):
 
 
     shape=req_json.get("shape")
-    shape_array = turn_string_into_array(shape)
+    shape_array = turn_string_into_array_for_shape(shape)
 
     input_number=req_json.get("input_number")
     output_number=req_json.get("output_number")
@@ -98,7 +107,7 @@ def predict(request):
     input_array = turn_string_into_2axis_array(input_string)
 
     shape=req_json.get("shape")
-    shape_array = turn_string_into_array(shape)
+    shape_array = turn_string_into_array_for_shape(shape)
 
     input_number=req_json.get("input_number")
     output_number=req_json.get("output_number")
