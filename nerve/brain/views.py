@@ -18,6 +18,7 @@ def index(request):
 
 def turn_string_into_array_for_shape(str):
     list = str.split(",")
+    print(list)
     array = np.arange(len(list))
     for i in range(0,len(list)):
         array[i]=list[i]
