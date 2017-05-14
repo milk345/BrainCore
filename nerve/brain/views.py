@@ -21,6 +21,7 @@ def turn_string_into_array_for_shape(str):
     array = np.arange(len(list))
     for i in range(0,len(list)):
         array[i]=list[i]
+    print(array)
     return array
 
 
